@@ -152,5 +152,11 @@ const userArray = function () {
         }
     )
 }
+const database = firebase.database();
+
+database.ref('/static/social').on('value', function (snapshot){
+    const social = snapshot.val();
+    console.log(social);
+})
 
 $(document).ready(cargarPagina);
